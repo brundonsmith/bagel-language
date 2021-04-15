@@ -1,0 +1,98 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Bagel",
+	"patterns": [
+		{
+			"include": "#decl-function"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#entities"
+		}
+	],
+	"repository": {
+		"decl-function": {
+			"patterns": [
+				{
+					"captures": {
+						"1": {
+							"name": "keyword.declaration.bagel"
+						},
+						"2": {
+							"name": "entity.name.function.bagel"
+						}
+					},
+					"match": "^\\s*(func|proc)\\s+(\\w+)",
+					"name": "meta.declaration.function.bagel"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.numeric.bagel",
+					"match": "\\b([0-9]+\\.?[0-9]*)\\b"
+				},
+				{
+					"name": "constant.language.bagel",
+					"match": "\\b(true|false|nil)\\b"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.bagel",
+					"match": "\\b(if|else|while|for|of)\\b"
+				},
+				{
+					"name": "keyword.operator.bagel",
+					"match": "\\b(typeof)\\b"
+				},
+				{
+					"name": "keyword.declaration.bagel",
+					"match": "\\b(func|proc|type|class|let|const)\\b"
+				},
+				{
+					"name": "keyword.other.bagel",
+					"match": "\\b(public|visible|private)\\b"
+				},
+				{
+					"name": "storage.type.function.arrow",
+					"match": "(\\=\\>|\\|>)"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.single.bagel",
+			"begin": "'",
+			"end": "'",
+			"patterns": [{
+					"name": "constant.character.escape.bagel",
+					"match": "\\\\."
+			}]
+		},
+		"entities": {
+			"patterns": [
+				{
+					"captures": {
+						"1": {
+							"name": "entity.name.function.bagel"
+						}
+					},
+					"name": "meta.function-call.bagel",
+					"match": "\\b(\\w+)\\("
+				}
+			]
+		}
+	},
+	"scopeName": "source.bagel"
+}

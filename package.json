@@ -1,0 +1,25 @@
+{
+    "name": "bagel-language",
+    "displayName": "Bagel Language",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.55.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "bagel",
+            "aliases": ["Bagel", "bagel"],
+            "extensions": ["bgl"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "bagel",
+            "scopeName": "source.bagel",
+            "path": "./syntaxes/bagel.tmLanguage.json"
+        }]
+    }
+}
