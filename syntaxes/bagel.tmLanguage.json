@@ -16,6 +16,9 @@
 		},
 		{
 			"include": "#entities"
+		},
+		{
+			"include": "#js-block"
 		}
 	],
 	"repository": {
@@ -91,6 +94,14 @@
 					"name": "meta.function-call.bagel",
 					"match": "\\b(\\w+)\\("
 				}
+			]
+		},
+		"js-block": {
+			"name": "keyword.other.bagel",
+			"begin": "js#",
+			"end": "#",
+			"patterns": [
+				{ "include": "source.js" }
 			]
 		}
 	},
