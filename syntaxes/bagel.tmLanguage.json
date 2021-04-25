@@ -6,7 +6,7 @@
 			"include": "#decl-function"
 		},
 		{
-			"include": "#constants"
+			"include": "#literals"
 		},
 		{
 			"include": "#keywords"
@@ -38,7 +38,7 @@
 				}
 			]
 		},
-		"constants": {
+		"literals": {
 			"patterns": [
 				{
 					"name": "constant.numeric.bagel",
@@ -54,7 +54,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.bagel",
-					"match": "\\b(if|else|while|for|of)\\b"
+					"match": "\\b(if|else|while|for|of|import|export|from|as)\\b"
 				},
 				{
 					"name": "keyword.operator.bagel",
@@ -66,11 +66,24 @@
 				},
 				{
 					"name": "keyword.other.bagel",
-					"match": "\\b(public|visible|private)\\b"
+					"match": "\\b(public|visible|private|reaction|triggers)\\b"
 				},
 				{
-					"name": "storage.type.function.arrow",
+					"name": "storage.type.function.arrow.bagel",
 					"match": "(\\=\\>|\\|>)"
+				},
+				{
+					"name": "support.type.primitive.bagel",
+					"match": "\\b(string|number|boolean)\\b"
+				},
+				{
+					"captures": {
+						"1": {
+							"name": "entity.name.type"
+						}
+					},
+					"name": "meta.type.declaration.bagel",
+					"match": "\\btype\\b\\s+(\\w+)\\b"
 				}
 			]
 		},
@@ -93,6 +106,10 @@
 					},
 					"name": "meta.function-call.bagel",
 					"match": "\\b(\\w+)\\("
+				},
+				{
+					"name": "variable.other.readwrite.bagel",
+					"match": "\\b\\w+\\b"
 				}
 			]
 		},
