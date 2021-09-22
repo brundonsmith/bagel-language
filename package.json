@@ -21,5 +21,8 @@
             "scopeName": "source.bagel",
             "path": "./syntaxes/bagel.tmLanguage.json"
         }]
+    },
+    "scripts": {
+        "apply:windows": "xcopy \".\" \"%USERPROFILE%\\.vscode\\extensions\\bagel-language\" /s/e/k/f/c/y"
     }
 }

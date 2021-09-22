@@ -66,7 +66,7 @@
 				},
 				{
 					"name": "keyword.other.bagel",
-					"match": "\\b(public|visible|private|reaction|triggers)\\b"
+					"match": "\\b(public|visible|private|reaction|triggers|until|forever|computation|this|new)\\b"
 				},
 				{
 					"name": "storage.type.function.arrow.bagel",
@@ -74,7 +74,7 @@
 				},
 				{
 					"name": "support.type.primitive.bagel",
-					"match": "\\b(string|number|boolean)\\b"
+					"match": "\\b(string|number|boolean|unknown)\\b"
 				},
 				{
 					"captures": {
