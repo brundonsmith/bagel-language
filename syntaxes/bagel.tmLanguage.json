@@ -108,6 +108,24 @@
 					"match": "\\b(\\w+)\\("
 				},
 				{
+					"captures": {
+						"1": {
+							"name": "entity.name.tag.bagel"
+						}
+					},
+					"name": "meta.tag.bagel",
+					"match": "</(\\w+)>"
+				},
+				{
+					"captures": {
+						"1": {
+							"name": "entity.name.tag.bagel"
+						}
+					},
+					"name": "meta.tag.bagel",
+					"match": "<(\\w+)(?:^/)*>"
+				},
+				{
 					"name": "variable.other.readwrite.bagel",
 					"match": "\\b\\w+\\b"
 				}
