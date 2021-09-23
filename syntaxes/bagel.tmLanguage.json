@@ -54,7 +54,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.bagel",
-					"match": "\\b(if|else|while|for|of|import|export|from|as)\\b"
+					"match": "\\b(if|else|while|for|of|import|export|from|as|switch|case)\\b"
 				},
 				{
 					"name": "keyword.operator.bagel",
