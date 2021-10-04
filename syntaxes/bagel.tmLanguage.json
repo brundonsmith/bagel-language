@@ -19,6 +19,9 @@
 		},
 		{
 			"include": "#js-block"
+		},
+		{
+			"include": "#comments"
 		}
 	],
 	"repository": {
@@ -137,6 +140,53 @@
 			"end": "#",
 			"patterns": [
 				{ "include": "source.js" }
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.block.bagel",
+					"begin": "(/\\*)(?:\\s*((@)internal)(?=\\s|(\\*/)))?",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.comment.bagel"
+						},
+						"2": {
+							"name": "storage.type.internaldeclaration.bagel"
+						},
+						"3": {
+							"name": "punctuation.decorator.internaldeclaration.bagel"
+						}
+					},
+					"end": "\\*/",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.bagel"
+						}
+					}
+				},
+				{
+					"begin": "(^[ \\t]+)?((//)(?:\\s*((@)internal)(?=\\s|$))?)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.whitespace.comment.leading.bagel"
+						},
+						"2": {
+							"name": "comment.line.double-slash.bagel"
+						},
+						"3": {
+							"name": "punctuation.definition.comment.bagel"
+						},
+						"4": {
+							"name": "storage.type.internaldeclaration.bagel"
+						},
+						"5": {
+							"name": "punctuation.decorator.internaldeclaration.bagel"
+						}
+					},
+					"end": "(?=$)",
+					"contentName": "comment.line.double-slash.bagel"
+				}
 			]
 		}
 	},
