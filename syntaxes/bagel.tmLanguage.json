@@ -36,7 +36,7 @@
 							"name": "entity.name.function.bagel"
 						}
 					},
-					"match": "^\\s*(func|proc)\\s+(\\w+)",
+					"match": "(?:^|[^\\w])(func|proc)\\s+(\\w+)",
 					"name": "meta.declaration.function.bagel"
 				}
 			]
