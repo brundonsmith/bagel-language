@@ -57,11 +57,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.bagel",
-					"match": "\\b(if|else|while|for|of|import|export|from|as|switch|case)\\b"
-				},
-				{
-					"name": "keyword.operator.bagel",
-					"match": "\\b(typeof)\\b"
+					"match": "\\b(if|else|while|for|of|import|export|from|as|switch|case|await|test|expr|block)\\b"
 				},
 				{
 					"name": "keyword.declaration.bagel",
@@ -108,7 +104,7 @@
 						}
 					},
 					"name": "meta.function-call.bagel",
-					"match": "\\b(\\w+)\\("
+					"match": "\\b(\\w+)(?:<.*>)?\\("
 				},
 				{
 					"captures": {
