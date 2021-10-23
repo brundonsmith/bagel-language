@@ -36,10 +36,13 @@
 							"name": "keyword.declaration.bagel"
 						},
 						"2": {
+							"name": "keyword.declaration.bagel"
+						},
+						"3": {
 							"name": "entity.name.function.bagel"
 						}
 					},
-					"match": "(?:^|[^\\w])(func|proc)\\s+(\\w+)",
+					"match": "(?:^|[^\\w])(func|proc)(?:[\\s]+(memo))\\s+(\\w+)",
 					"name": "meta.declaration.function.bagel"
 				}
 			]
