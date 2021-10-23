@@ -3,13 +3,13 @@
 	"name": "Bagel",
 	"patterns": [
 		{
+			"include": "#keywords"
+		},
+		{
 			"include": "#decl-function"
 		},
 		{
 			"include": "#literals"
-		},
-		{
-			"include": "#keywords"
 		},
 		{
 			"include": "#strings"
@@ -61,7 +61,7 @@
 				},
 				{
 					"name": "keyword.declaration.bagel",
-					"match": "\\b(func|proc|type|class|let|const)\\b"
+					"match": "\\b(func|memo|proc|type|class|let|const)\\b"
 				},
 				{
 					"name": "keyword.other.bagel",
