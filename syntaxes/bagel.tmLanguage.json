@@ -3,10 +3,13 @@
 	"name": "Bagel",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#decl-function-or-proc"
 		},
 		{
-			"include": "#decl-function"
+			"include": "#decl-type-or-class"
+		},
+		{
+			"include": "#keywords"
 		},
 		{
 			"include": "#literals"
@@ -25,7 +28,7 @@
 		}
 	],
 	"repository": {
-		"decl-function": {
+		"decl-function-or-proc": {
 			"patterns": [
 				{
 					"captures": {
@@ -38,6 +41,22 @@
 					},
 					"match": "(?:^|[^\\w])(func|proc)\\s+(\\w+)",
 					"name": "meta.declaration.function.bagel"
+				}
+			]
+		},
+		"decl-type-or-class": {
+			"patterns": [
+				{
+					"captures": {
+						"1": {
+							"name": "keyword.declaration.bagel"
+						},
+						"2": {
+							"name": "support.type.bagel"
+						}
+					},
+					"match": "(?:^|[^\\w])(type|class)\\s+(\\w+)",
+					"name": "meta.declaration.class.bagel"
 				}
 			]
 		},
