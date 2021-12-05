@@ -23,6 +23,7 @@
         }]
     },
     "scripts": {
-        "apply:windows": "xcopy \".\" \"%USERPROFILE%\\.vscode\\extensions\\bagel-language\" /s/e/k/f/c/y"
+        "apply:windows": "xcopy \".\" \"%USERPROFILE%\\.vscode\\extensions\\bagel-language\" /s/e/k/f/c/y",
+        "apply:macos": "cp -Rf . ~/.vscode/extensions/bagel-language"
     }
 }
