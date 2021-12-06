@@ -58,7 +58,7 @@
 							"name": "support.type.bagel"
 						}
 					},
-					"match": "(?:^|[^\\w])(type|class)\\s+(\\w+)",
+					"match": "(?:^|[^\\w])(type|class|store)\\s+(\\w+)",
 					"name": "meta.declaration.class.bagel"
 				}
 			]
