@@ -87,7 +87,7 @@
 				},
 				{
 					"name": "keyword.other.bagel",
-					"match": "\\b(public|visible|private|reaction|autorun|triggers|until|forever|computation|this|new)\\b"
+					"match": "\\b(public|visible|private|reaction|observe|triggering|until|forever|computation|this|new)\\b"
 				},
 				{
 					"name": "storage.type.function.arrow.bagel",
