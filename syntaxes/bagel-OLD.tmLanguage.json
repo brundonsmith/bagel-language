@@ -1,0 +1,212 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Bagel",
+	"patterns": [
+		{
+			"include": "#decl-function-or-proc"
+		},
+		{
+			"include": "#decl-type-or-class"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#literals"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#entities"
+		},
+		{
+			"include": "#js-block"
+		},
+		{
+			"include": "#comments"
+		}
+	],
+	"repository": {
+		"decl-function-or-proc": {
+			"patterns": [
+				{
+					"captures": {
+						"1": {
+							"name": "keyword.declaration.bagel"
+						},
+						"2": {
+							"name": "keyword.declaration.bagel"
+						},
+						"3": {
+							"name": "entity.name.function.bagel"
+						}
+					},
+					"match": "(?:^|[^\\w])(func|proc)(?:[\\s]+(memo))\\s+(\\w+)",
+					"name": "meta.declaration.function.bagel"
+				}
+			]
+		},
+		"decl-type-or-class": {
+			"patterns": [
+				{
+					"captures": {
+						"1": {
+							"name": "keyword.declaration.bagel"
+						},
+						"2": {
+							"name": "support.type.bagel"
+						}
+					},
+					"match": "(?:^|[^\\w])(type|class|store)\\s+(\\w+)",
+					"name": "meta.declaration.class.bagel"
+				}
+			]
+		},
+		"literals": {
+			"patterns": [
+				{
+					"name": "constant.numeric.bagel",
+					"match": "\\b([0-9]+\\.?[0-9]*)\\b"
+				},
+				{
+					"name": "constant.language.bagel",
+					"match": "\\b(true|false|nil)\\b"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.bagel",
+					"match": "\\b(if|else|while|for|of|import|export|from|as|switch|case|await|test|expr|block)\\b"
+				},
+				{
+					"name": "keyword.declaration.bagel",
+					"match": "\\b(func|memo|proc|type|class|let|const)\\b"
+				},
+				{
+					"name": "keyword.other.bagel",
+					"match": "\\b(public|visible|private|reaction|observe|triggering|until|forever|computation|this|new)\\b"
+				},
+				{
+					"name": "storage.type.function.arrow.bagel",
+					"match": "(\\=\\>|\\|>)"
+				},
+				{
+					"name": "support.type.primitive.bagel",
+					"match": "\\b(string|number|boolean|unknown)\\b"
+				},
+				{
+					"captures": {
+						"1": {
+							"name": "entity.name.type"
+						}
+					},
+					"name": "meta.type.declaration.bagel",
+					"match": "\\btype\\b\\s+(\\w+)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.single.bagel",
+			"begin": "'",
+			"end": "'",
+			"patterns": [{
+					"name": "constant.character.escape.bagel",
+					"match": "\\\\."
+			}]
+		},
+		"entities": {
+			"patterns": [
+				{
+					"captures": {
+						"1": {
+							"name": "entity.name.function.bagel"
+						}
+					},
+					"name": "meta.function-call.bagel",
+					"match": "\\b(\\w+)(?:<.*>)?\\("
+				},
+				{
+					"captures": {
+						"1": {
+							"name": "entity.name.tag.bagel"
+						}
+					},
+					"name": "meta.tag.bagel",
+					"match": "</(\\w+)>"
+				},
+				{
+					"captures": {
+						"1": {
+							"name": "entity.name.tag.bagel"
+						}
+					},
+					"name": "meta.tag.bagel",
+					"match": "<(\\w+)(?:^/)*>"
+				},
+				{
+					"name": "variable.other.readwrite.bagel",
+					"match": "\\b\\w+\\b"
+				}
+			]
+		},
+		"js-block": {
+			"name": "keyword.other.bagel",
+			"begin": "js#",
+			"end": "#",
+			"patterns": [
+				{ "include": "source.js" }
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.block.bagel",
+					"begin": "(/\\*)(?:\\s*((@)internal)(?=\\s|(\\*/)))?",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.comment.bagel"
+						},
+						"2": {
+							"name": "storage.type.internaldeclaration.bagel"
+						},
+						"3": {
+							"name": "punctuation.decorator.internaldeclaration.bagel"
+						}
+					},
+					"end": "\\*/",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.bagel"
+						}
+					}
+				},
+				{
+					"begin": "(^[ \\t]+)?((//)(?:\\s*((@)internal)(?=\\s|$))?)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.whitespace.comment.leading.bagel"
+						},
+						"2": {
+							"name": "comment.line.double-slash.bagel"
+						},
+						"3": {
+							"name": "punctuation.definition.comment.bagel"
+						},
+						"4": {
+							"name": "storage.type.internaldeclaration.bagel"
+						},
+						"5": {
+							"name": "punctuation.decorator.internaldeclaration.bagel"
+						}
+					},
+					"end": "(?=$)",
+					"contentName": "comment.line.double-slash.bagel"
+				}
+			]
+		}
+	},
+	"scopeName": "source.bagel"
+}
