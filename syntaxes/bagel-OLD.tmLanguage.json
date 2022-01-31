@@ -83,11 +83,11 @@
 				},
 				{
 					"name": "keyword.declaration.bagel",
-					"match": "\\b(func|memo|proc|type|class|let|const)\\b"
+					"match": "\\b(func|memo|proc|type|let|const)\\b"
 				},
 				{
 					"name": "keyword.other.bagel",
-					"match": "\\b(public|visible|private|reaction|observe|triggering|until|forever|computation|this|new)\\b"
+					"match": "\\b(public|visible|private|autorun|remote|js)\\b"
 				},
 				{
 					"name": "storage.type.function.arrow.bagel",
