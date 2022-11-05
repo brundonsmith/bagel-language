@@ -3,51 +3,32 @@
 	"name": "Bagel",
 	"patterns": [
 		{
-			"include": "#decl-function-or-proc"
+			"include": "#js-block"
 		},
 		{
-			"include": "#decl-type-or-class"
+			"include": "#js-func-proc-body"
 		},
 		{
-			"include": "#keywords"
+			"include": "#decl-type"
 		},
 		{
 			"include": "#literals"
 		},
 		{
-			"include": "#strings"
+			"include": "#keywords"
+		},
+		{
+			"include": "#string"
 		},
 		{
 			"include": "#entities"
-		},
-		{
-			"include": "#js-block"
 		},
 		{
 			"include": "#comments"
 		}
 	],
 	"repository": {
-		"decl-function-or-proc": {
-			"patterns": [
-				{
-					"captures": {
-						"1": {
-							"name": "keyword.declaration.bagel"
-						},
-						"2": {
-							"name": "keyword.declaration.bagel"
-						},
-						"3": {
-							"name": "entity.name.function.bagel"
-						}
-					},
-					"match": "(?:^|[^\\w])(func|proc)(?:[\\s]+(memo))\\s+(\\w+)",
-					"name": "meta.declaration.function.bagel"
-				}
-			]
-		},
-		"decl-type-or-class": {
+		"decl-type": {
 			"patterns": [
 				{
 					"captures": {
@@ -58,7 +39,7 @@
 							"name": "support.type.bagel"
 						}
 					},
-					"match": "(?:^|[^\\w])(type|class|store)\\s+(\\w+)",
+					"match": "(?:^|[^\\w])(type)\\s+(\\w+)",
 					"name": "meta.declaration.class.bagel"
 				}
 			]
@@ -79,15 +60,15 @@
 			"patterns": [
 				{
 					"name": "keyword.control.bagel",
-					"match": "\\b(if|else|while|for|of|import|export|from|as|switch|case|await|test|expr|block)\\b"
+					"match": "\\b(if|else|while|for|of|import|export|expose|from|as|switch|case|await|detach|test|expr|block|throw|try|catch)\\b"
 				},
 				{
 					"name": "keyword.declaration.bagel",
-					"match": "\\b(func|memo|proc|type|let|const)\\b"
+					"match": "\\b(func|proc|type|nominal|let|const|async|js|deno|node|readonly)\\b"
 				},
 				{
 					"name": "keyword.other.bagel",
-					"match": "\\b(public|visible|private|autorun|remote|js)\\b"
+					"match": "\\b(public|visible|private|autorun|forever|until|remote|js|typeof|instanceof|elementof|keyof|valueof|extends)\\b"
 				},
 				{
 					"name": "storage.type.function.arrow.bagel",
@@ -108,7 +89,7 @@
 				}
 			]
 		},
-		"strings": {
+		"string": {
 			"name": "string.quoted.single.bagel",
 			"begin": "'",
 			"end": "'",
@@ -153,9 +134,17 @@
 			]
 		},
 		"js-block": {
-			"name": "keyword.other.bagel",
+			"name": "meta.embedded.block.javascript",
 			"begin": "js#",
-			"end": "#",
+			"end": "#js",
+			"patterns": [
+				{ "include": "source.js" }
+			]
+		},
+		"js-func-proc-body": {
+			"name": "meta.embedded.block.javascript",
+			"begin": "{#",
+			"end": "#}",
 			"patterns": [
 				{ "include": "source.js" }
 			]
